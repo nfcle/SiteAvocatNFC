@@ -1,0 +1,534 @@
+<html><head><base href="https://avocat-dupont.fr/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maître Nathalie Fourno - Avocate à Pontault-Combault</title>
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --secondary-color: #34495e;
+      --accent-color: #e74c3c;
+      --text-color: #333;
+      --light-text: #ecf0f1;
+      --background-color: #f9f9f9;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Lora', serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--background-color);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      color: var(--light-text);
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: var(--light-text);
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: var(--accent-color);
+    }
+
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--light-text);
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .hero p {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--accent-color);
+      color: var(--light-text);
+      padding: 12px 24px;
+      text-decoration: none;
+      font-size: 18px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #c0392b;
+    }
+
+    .services {
+      padding: 80px 0;
+      background-color: #fff;
+    }
+
+    .services h2 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+      color: var(--primary-color);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .service-item {
+      background-color: var(--background-color);
+      padding: 30px;
+      border-radius: 5px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .service-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-item i {
+      font-size: 48px;
+      color: var(--accent-color);
+      margin-bottom: 20px;
+    }
+
+    .service-item h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: var(--primary-color);
+    }
+
+    .about {
+      padding: 80px 0;
+      background-color: var(--secondary-color);
+      color: var(--light-text);
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .about-text {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    .about h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .about-image {
+      flex: 1;
+    }
+
+    .about-image img {
+      max-width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    #contact {
+      padding: 80px 0;
+      background-color: #f5f5f5;
+    }
+
+    .contact-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .contact-info {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    .contact-info h2 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      color: var (--primary-color);
+    }
+
+    .contact-info p {
+      margin-bottom: 10px;
+    }
+
+    .contact-form {
+      flex: 1;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 5px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form h3 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--text-color);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .form-group textarea {
+      height: 150px;
+    }
+
+    .submit-btn {
+      background-color: var(--accent-color);
+      color: var(--light-text);
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #c0392b;
+    }
+
+    footer {
+      background-color: var(--primary-color);
+      color: var(--light-text);
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links a {
+      color: var(--light-text);
+      text-decoration: none;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-color);
+    }
+
+    .social-icons a {
+      color: var(--light-text);
+      font-size: 24px;
+      margin: 0 10px;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: var(--accent-color);
+    }
+
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+      }
+
+      nav ul {
+        margin-top: 20px;
+      }
+
+      .about-content,
+      .contact-content {
+        flex-direction: column;
+      }
+
+      .about-text,
+      .contact-info {
+        padding-right: 0;
+        margin-bottom: 40px;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo">Maître Nathalie Fourno</div>
+      <nav>
+        <ul>
+          <li><a href="#home">Accueil</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">À Propos</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <h1>Maître Nathalie Fourno</h1>
+        <p>Défendre vos intêrets avec passion</p>
+        <a href="#contact" class="cta-button">Prendre rendez-vous</a>
+      </div>
+    </section>
+
+    <section id="services" class="services">
+      <div class="container">
+        <h2>Nos Domaines d'Expertise</h2>
+        <div class="service-grid">
+          <div class="service-item">
+            <i class="fas fa-balance-scale"></i>
+            <h3>Droit de la Famille</h3>
+            <ul>
+              <li>Divorce par consentement mutuel ou judiciaire</li>
+              <li>Séparation et fixation des modalités d’exercice de l’autorité parentale</li>
+              <li>Contribution à l’entretien et l’éducation des enfants (pension alimentaire)</li>
+              <li>Requête afin d’ordonnance de protection en cas de violences conjugales</li>
+            </ul>
+          </div>
+          <div class="service-item">
+            <i class="fas fa-briefcase"></i>
+            <h3>Droit Pénal</h3>
+            <ul>
+              <li>Assistance en garde à vue</li>
+              <li>Assistance devant le juge d’instruction</li>
+              <li>Assistance devant les juridictions pénales (tribunal de police, tribunal correctionnel)</li>
+              <li>Assistance des victimes</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container about-content">
+        <div class="about-text">
+          <h2>À Propos de Maître Nathalie Fourno</h2>
+          <p> </p>
+          <p>Maître Fourno croit en une approche personnalisée, adaptant ses services aux besoins spécifiques de chaque client. Son objectif est de vous offrir des solutions juridiques pragmatiques et efficaces, tout en maintenant les plus hauts standards d'éthique et de professionnalisme.</p>
+        </div>
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1577919072209-61e24cbc4a67?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" alt="Maître Nathalie Fourno" width="600" height="400">
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container contact-content">
+        <div class="contact-info">
+          <h2>Contactez-nous</h2>
+          <p><i class="fas fa-phone"></i> 01.60.29.17.65</p>
+          <p><i class="fas fa-envelope"></i> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6f01090c410e19000c0e1b1c2f001d0e01080a41091d">[email&#160;protected]</a></p>
+          <p><i class="fas fa-map-marker-alt"></i> 20 avenue du Général de Gaulle, 77340 PONTAULT COMBAULT</p>
+          <p><i class="fas fa-gavel"></i> Barreau de Melun</p>
+        </div>
+        <div class="contact-form">
+          <h3>Prenez rendez-vous</h3>
+          <form action="https://avocat-dupont.fr/submit-form" method="POST">
+            <div class="form-group">
+              <label for="name">Nom complet</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Adresse e-mail</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Numéro de téléphone</label>
+              <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Votre message</label>
+              <textarea id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Envoyer</button>
+          </form>
+        </div>
+<div class="">
+
+
+        <a class='avocat-consultingwidget ' href='https://consultation.avocat.fr/avocat-47245-a58d.html' data-widget-id='c31eafcbf151488ccec4'>Consulter mon profil Avocat.fr</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://consultation.avocat.fr/js/consultingwidget.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','avocat-widget');</script>
+</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div class="footer-links">
+        <a href="#home">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#about">À Propos</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/nathalie-fourno" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://www.twitter.com/nathaliefourno" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.facebook.com/cabinetfourno" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+    </div>
+    <p>&copy; 2023 Cabinet d'avocat Nathalie Fourno. Tous droits réservés.</p>
+  </footer>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Form submission
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Here you would typically send the form data to a server
+      // For demonstration, we'll just show an alert
+      alert('Merci pour votre message. Nous vous contacterons bientôt.');
+      form.reset();
+    });
+
+    // Add a scroll-to-top button
+    const scrollBtn = document.createElement('button');
+    scrollBtn.innerHTML = '&uarr;';
+    scrollBtn.setAttribute('id', 'scroll-to-top');
+    document.body.appendChild(scrollBtn);
+
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollBtn.style.display = 'block';
+      } else {
+        scrollBtn.style.display = 'none';
+      }
+    });
+
+    // Add styles for the scroll-to-top button
+    const style = document.createElement('style');
+    style.textContent = `
+      #scroll-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: var(--accent-color);
+        color: var(--light-text);
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        cursor: pointer;
+        display: none;
+        transition: background-color 0.3s ease;
+      }
+      #scroll-to-top:hover {
+        background-color: #c0392b;
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
